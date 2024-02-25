@@ -8,7 +8,6 @@ class UserNotFoundErr extends Error {}
 
 export async function GetFormStats() {
   const user = await currentUser();
-
   if (!user) {
     throw new UserNotFoundErr();
   }
@@ -62,7 +61,6 @@ export async function CreateForm(data: formSchemaType) {
       description,
     },
   });
-
   if (!form) {
     throw new Error("something went wrong");
   }
